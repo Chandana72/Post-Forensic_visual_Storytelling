@@ -4,7 +4,6 @@ A web-based digital forensics prototype designed to make reconstructed cyber inc
 
 The project takes structured forensic event data, reconstructs a chronological incident sequence, and presents it through a combination of timeline navigation, simplified visual scenes, supporting evidence, MITRE ATT&CK context, and optional locally generated AI summaries and mitigation guidance.
 
----------------------------------------------
 ## Project Motivation
 
 Digital forensic investigations often produce large amounts of technical information such as timestamps, event IDs, authentication records, system activity and network events. While this information is useful to investigators, it can be difficult for non-specialist stakeholders to interpret directly.
@@ -13,7 +12,6 @@ This project explores whether a visual communication layer can make reconstructe
 
 The visual storytelling idea was also influenced by simple animated storytelling and stick-figure style representations, with the aim of communicating incident progression using minimal but recognisable actions.
 
------------------------------------------------
 ## Technology Stack
 
 ### Frontend
@@ -45,7 +43,6 @@ Ollama
 
 Qwen2.5 3b-instruct
 
------------------------------------------------
 ## Project Structure
 
 ```
@@ -63,7 +60,7 @@ project-root/
 ├── requirements.txt
 └── README.md
 ```
--------------------------------------------------
+
 ## Requirements
 
 Install the following before running the project:
@@ -86,7 +83,6 @@ numpy
 
 python-multipart
 
----------------------------------------------------
 ## Running the Project
 
 The backend and frontend should be run in separate terminal windows.
@@ -134,7 +130,6 @@ http://127.0.0.1:11434
 
 The AI features are used only after incident reconstruction. They do not replace the underlying evidence or independently determine the forensic meaning of raw records.
 
------------------------------------------
 ## Using the Prototype
 
 Start the backend and frontend servers.
@@ -153,7 +148,6 @@ Optionally generate a local AI incident summary or mitigation guidance.
 
 Add investigator notes or export selected report sections.
 
-----------------------------------
 ## USER STORIES
 
 User stories describe system requirements from the perspective of different users by identifying who will use the system, what they want to achieve, and why the capability is valuable.
