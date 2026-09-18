@@ -1,45 +1,155 @@
-# Cyber Incident Replay: Interactive Visual Storytelling of Forensic Evidence for Improved Incident Understanding and Decision-Making
+##Post-Forensic Visual Storytelling##
 
-PROJECT SCOPE
+A web-based digital forensics prototype designed to make reconstructed cyber incidents easier to understand through interactive visual storytelling.
 
-The purpose of this project is to automate the reconstruction and display of digital forensic investigations using objects taken from a forensic dataset. The system will use evidence such as system logs, user activity, file system metadata, browser history, and authentication records to create a chronological timeline of occurrences.Instead of presenting investigators with raw logs or static timelines, the software will offer a hierarchical visual analysis. Users will first receive a high-level summary of the incident before selecting different stages to investigate the forensic evidence, which includes linked events, timestamps, and supporting artifacts.
+The project takes structured forensic event data, reconstructs a chronological incident sequence, and presents it through a combination of timeline navigation, simplified visual scenes, supporting evidence, MITRE ATT&CK context, and optional locally generated AI summaries and mitigation guidance.
 
-The platform is designed to reduce the cognitive effort required to make sense of massive amounts of forensic data, while maintaining transparency by linking every visualized event to its original source of evidence. The system aims to enhance the efficiency of forensic analysis and communication of investigation findings by representing investigations as an interactive visual narrative, instead of a collection of disconnected log entries.
+---------------------------------------------
+Project Motivation
 
-----------------------------------
-RESEARCH QUESTION 
+Digital forensic investigations often produce large amounts of technical information such as timestamps, event IDs, authentication records, system activity and network events. While this information is useful to investigators, it can be difficult for non-specialist stakeholders to interpret directly.
 
-Can interactive visual forensic storytelling improve non-technical stakeholders' comprehension of cyber incidents and support more informed decision-making?
+This project explores whether a visual communication layer can make reconstructed incidents easier to follow without removing access to the underlying forensic evidence.
 
-----------------------------------
-EXPECTED OUTCOME
+The visual storytelling idea was also influenced by simple animated storytelling and stick-figure style representations, with the aim of communicating incident progression using minimal but recognisable actions.
 
-An automated forensic investigation tool that reduces manual analysis effort and improves comprehension of incident findings through animated incident reconstruction and visual storytelling. The system is expected to provide different levels of incident representation so that users can obtain an accessible overview of what occurred, explore the reconstructed sequence of incident actions, and inspect the underlying technical evidence when greater detail is required. Rather than replacing forensic investigators or independently communicating forensic conclusions, the platform will operate as an investigator-controlled explanation and decision-support layer between complex forensic evidence and the stakeholders who must understand and respond to the incident.
+-----------------------------------------------
+Technology Stack
 
-A further expected outcome is empirical evidence concerning whether interactive visual representations of reconstructed forensic incidents improve incident comprehension, identification of significant incident stages, evidential understanding, analysis efficiency, and the ability to make informed incident-related judgements when compared with conventional forensic timeline representations. The research will also investigate whether these effects differ according to users' levels of cybersecurity expertise.
+Frontend
+  HTML
+  CSS
+  JavaScript
+  Rive Web Runtime
+  GSAP
 
-Designing the platform for users with varying levels of cybersecurity expertise provides an important methodological advantage for the evaluation. Cybersecurity expertise can be measured and treated as an experimental variable rather than imposed as a strict participant eligibility requirement.
+Backend
+  Python
+  FastAPI
+  pandas
+  NumPy
+  SQLite
 
-The overall expected contribution is therefore both technical and human-centred: a working framework for evidence-linked forensic incident reconstruction and interactive visual explanation, together with empirical findings concerning how such representations affect incident understanding, evidence interpretation, analysis efficiency, and informed judgement across users with different levels of cybersecurity expertise.
+Security and AI Context
+  MITRE ATT&CK
+  Ollama
+  Qwen2.5 3b-instruct
 
------------------------------
-SYSTEM PIPELINE
+-----------------------------------------------
+Project Structure
 
-Forensic Dataset → Evidence Extraction → Event Normalisation → Event Correlation → Timeline Reconstruction → Visual Incident Replay → Dashboard 
+project-root/
+├── backend/
+│   ├── app.py
+│   ├── local_summarizer.py
+│   └── uploads/
+│
+├── frontend/
+│   ├── main.html
+│   └── rive/
+│       └── characters.riv
+│
+├── requirements.txt
+└── README.md
 
-------------------------------
-DATASET
+-------------------------------------------------
+Requirements
 
-This project uses the **M57 Jean** forensic scenario from the **Digital Corpora** collection. The dataset represents a realistic digital forensic investigation involving a fictional employee's workstation and contains a variety of forensic artefacts, including Windows Event Logs, browser history, email data, file system metadata, registry information, user activity, and deleted files.
+Install the following before running the project:
+Python 3.10+
+A modern web browser
+Python dependencies from requirements.txt
+Ollama if the optional local AI features are required
 
-The M57 Jean scenario was selected because it is publicly available, well documented, and widely used for digital forensics education and research. Its realistic structure and diverse evidence make it well suited for reconstructing incident timelines and evaluating interactive forensic visualisation.
+Install the Python dependencies from the project root:
+pip install -r requirements.txt
 
-Dataset Sources:
+Typical backend dependencies include:
+fastapi
+uvicorn
+pandas
+numpy
+python-multipart
 
-- CFReDS Reference: https://cfreds.nist.gov/all/DigitalCorpora/2008M57Jean
-- Digital Corpora Download: https://digitalcorpora.org/corpora/scenarios/m57-jean/
+Running the Project
 
-  Note: The dataset is not included in this repository due to its size and should be downloaded directly from Digital Corpora.
+The backend and frontend should be run in separate terminal windows.
+
+1. Start the backend
+
+Move into the backend directory:
+
+cd backend
+
+Run the FastAPI server:
+
+python -m uvicorn app:app --host 0.0.0.0 --port 8000
+
+The backend will be available at:
+
+http://127.0.0.1:8000
+
+FastAPI documentation is available at:
+
+http://127.0.0.1:8000/docs
+
+2. Start the frontend
+
+Open a second terminal and move into the frontend directory:
+
+cd frontend
+
+Run the local frontend server:
+
+python3 -m http.server 5500 --bind 0.0.0.0
+
+Then open:
+
+http://127.0.0.1:5500/main.html
+
+Do not open main.html directly using a file:/// path, as browser restrictions may prevent API requests or animation resources from loading correctly.
+
+Optional Local AI Features
+
+The incident summary and mitigation features run locally through Ollama.
+
+Install the model used during development:
+
+ollama pull qwen2.5:3b-instruct
+
+Check installed models using:
+
+ollama list
+
+If required, start the Ollama service:
+
+ollama serve
+
+The backend communicates with Ollama locally, normally through:
+
+http://127.0.0.1:11434
+
+The AI features are used only after incident reconstruction. They do not replace the underlying evidence or independently determine the forensic meaning of raw records.
+
+Using the Prototype
+
+Start the backend and frontend servers.
+
+Open the web interface.
+
+Select or import a forensic CSV dataset.
+
+Allow the backend to reconstruct the event sequence.
+
+Navigate through the timeline and visual scenes.
+
+Review event details, evidence and MITRE ATT&CK context where available.
+
+Optionally generate a local AI incident summary or mitigation guidance.
+
+Add investigator notes or export selected report sections.
+
+
 
 ----------------------------------
 USER STORIES
