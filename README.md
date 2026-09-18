@@ -138,12 +138,19 @@ The AI features are used only after incident reconstruction. They do not replace
 ## Using the Prototype
 
 Start the backend and frontend servers.
+
 Open the web interface.
+
 Select or import a forensic CSV dataset.
+
 Allow the backend to reconstruct the event sequence.
+
 Navigate through the timeline and visual scenes.
+
 Review event details, evidence and MITRE ATT&CK context where available.
+
 Optionally generate a local AI incident summary or mitigation guidance.
+
 Add investigator notes or export selected report sections.
 
 ----------------------------------
