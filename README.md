@@ -18,21 +18,31 @@ The visual storytelling idea was also influenced by simple animated storytelling
 
 ### Frontend
 HTML
+
 CSS
+
 JavaScript
+
 Rive Web Runtime
+
 GSAP
 
 ### Backend
 Python
+
 FastAPI
+
 pandas
+
 NumPy
+
 SQLite
 
 ### Security and AI Context
 MITRE ATT&CK
+
 Ollama
+
 Qwen2.5 3b-instruct
 
 -----------------------------------------------
@@ -67,9 +77,13 @@ pip install -r requirements.txt
 
 Typical backend dependencies include:
 fastapi
+
 uvicorn
+
 pandas
+
 numpy
+
 python-multipart
 
 ---------------------------------------------------
