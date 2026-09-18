@@ -1,11 +1,11 @@
-#Post-Forensic Visual Storytelling
+**Post-Forensic Visual Storytelling**
 
 A web-based digital forensics prototype designed to make reconstructed cyber incidents easier to understand through interactive visual storytelling.
 
 The project takes structured forensic event data, reconstructs a chronological incident sequence, and presents it through a combination of timeline navigation, simplified visual scenes, supporting evidence, MITRE ATT&CK context, and optional locally generated AI summaries and mitigation guidance.
 
 ---------------------------------------------
-##Project Motivation
+## Project Motivation
 
 Digital forensic investigations often produce large amounts of technical information such as timestamps, event IDs, authentication records, system activity and network events. While this information is useful to investigators, it can be difficult for non-specialist stakeholders to interpret directly.
 
@@ -14,31 +14,31 @@ This project explores whether a visual communication layer can make reconstructe
 The visual storytelling idea was also influenced by simple animated storytelling and stick-figure style representations, with the aim of communicating incident progression using minimal but recognisable actions.
 
 -----------------------------------------------
-##Technology Stack
+## Technology Stack
 
-###Frontend
+### Frontend
 HTML
 CSS
 JavaScript
 Rive Web Runtime
 GSAP
 
-###Backend
+### Backend
 Python
 FastAPI
 pandas
 NumPy
 SQLite
 
-###Security and AI Context
+### Security and AI Context
 MITRE ATT&CK
 Ollama
 Qwen2.5 3b-instruct
 
 -----------------------------------------------
-##Project Structure
+## Project Structure
 
-```text
+```
 project-root/
 ├── backend/
 │   ├── app.py
@@ -54,7 +54,7 @@ project-root/
 └── README.md
 ```
 -------------------------------------------------
-##Requirements
+## Requirements
 
 Install the following before running the project:
 - Python 3.10+
@@ -73,7 +73,7 @@ numpy
 python-multipart
 
 ---------------------------------------------------
-###Running the Project
+### Running the Project
 
 The backend and frontend should be run in separate terminal windows.
 
@@ -121,7 +121,7 @@ http://127.0.0.1:11434
 The AI features are used only after incident reconstruction. They do not replace the underlying evidence or independently determine the forensic meaning of raw records.
 
 -----------------------------------------
-###Using the Prototype
+### Using the Prototype
 
 Start the backend and frontend servers.
 Open the web interface.
@@ -133,7 +133,7 @@ Optionally generate a local AI incident summary or mitigation guidance.
 Add investigator notes or export selected report sections.
 
 ----------------------------------
-###USER STORIES
+### USER STORIES
 
 User stories describe system requirements from the perspective of different users by identifying who will use the system, what they want to achieve, and why the capability is valuable.
 
