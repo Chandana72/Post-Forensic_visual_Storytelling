@@ -1,4 +1,4 @@
-**Post-Forensic Visual Storytelling**
+#Post-Forensic Visual Storytelling
 
 A web-based digital forensics prototype designed to make reconstructed cyber incidents easier to understand through interactive visual storytelling.
 
@@ -73,7 +73,7 @@ numpy
 python-multipart
 
 ---------------------------------------------------
-### Running the Project
+## Running the Project
 
 The backend and frontend should be run in separate terminal windows.
 
@@ -121,7 +121,7 @@ http://127.0.0.1:11434
 The AI features are used only after incident reconstruction. They do not replace the underlying evidence or independently determine the forensic meaning of raw records.
 
 -----------------------------------------
-### Using the Prototype
+## Using the Prototype
 
 Start the backend and frontend servers.
 Open the web interface.
@@ -133,7 +133,7 @@ Optionally generate a local AI incident summary or mitigation guidance.
 Add investigator notes or export selected report sections.
 
 ----------------------------------
-### USER STORIES
+## USER STORIES
 
 User stories describe system requirements from the perspective of different users by identifying who will use the system, what they want to achieve, and why the capability is valuable.
 
